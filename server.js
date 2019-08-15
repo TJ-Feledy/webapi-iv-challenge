@@ -4,11 +4,13 @@ const colors = require('colors')
 
 const server = express();
 
+const apiRoot = process.env.APIROOT || '/api/users'
+
 server.use(express.json())
 
 server.use(logger)
 
-server.use(process.env.APIROOT, userRouter) //'/api/users'
+server.use(apiRoot, userRouter) //'/api/users'
 
 server.get('/', (req, res) => {
   res.send(`<h2>Let's write some middleware!</h2>`)
