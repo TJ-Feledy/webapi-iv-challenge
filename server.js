@@ -13,7 +13,7 @@ server.use(logger)
 server.use(apiRoot, userRouter) //'/api/users'
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`)
+  res.send(`<h2>Why hello there! the api root endpoint is '/api/users'</h2>`)
 });
 
 //custom middleware
